@@ -1,21 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer base {
+    :root {
+        --radius: 0.5rem;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer utilities {
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+
+    .text-30-extrabold {
+        @apply font-extrabold text-[30px] text-white;
+    }
+
+    .text-30-bold {
+        @apply font-bold text-[30px] text-black;
+    }
+
+    .text-30-semibold {
+        @apply font-semibold text-[30px] text-black;
+    }
+
+    .text-26-semibold {
+        @apply font-semibold text-[26px] text-black;
+    }
+
+    .text-24-black {
+        @apply font-black text-[24px] text-black;
+    }
+
+    .text-20-medium {
+        @apply font-medium text-[20px] text-black;
+    }
+
+    .text-16-medium {
+        @apply font-medium text-[16px] text-black;
+    }
+
+    .text-14-normal {
+        @apply font-normal text-sm text-white-100/80;
+    }
+
+    .pink_container {
+        @apply flex flex-col justify-center items-center bg-primary px-6 py-10 w-full min-h-[530px] pattern;
+    }
+
+    .tag {
+        @apply relative bg-secondary px-6 py-3 rounded-sm font-bold font-work-sans uppercase tag-tri;
+    }
+
+    .heading {
+        @apply bg-black my-5 px-6 py-3 max-w-5xl font-extrabold font-work-sans text-[36px] text-center text-white sm:text-[54px] uppercase leading-[46px] sm:leading-[64px];
+    }
+
+    .sub-heading {
+        @apply max-w-2xl font-medium text-[20px] text-center text-white break-words;
+    }
+
+    .section_container {
+        @apply mx-auto px-6 py-10 max-w-7xl;
+    }
+
+    .card_grid {
+        @apply gap-5 grid sm:grid-cols-2 md:grid-cols-3;
+    }
+
+    .card_grid-sm {
+        @apply gap-5 grid sm:grid-cols-2;
+    }
+
+    .no-result {
+        @apply font-normal text-black-100 text-sm;
+    }
+
+    /* profile */
+    .profile_container {
+        @apply flex lg:flex-row flex-col gap-10 mx-auto px-6 pt-20 pb-10 w-full max-w-7xl;
+    }
+
+    .profile_card {
+        @apply relative z-0 flex flex-col justify-center items-center border-[5px] bg-primary shadow-100 px-6 pt-20 pb-6 border-black rounded-[30px] w-80 max-lg:w-full h-fit;
+    }
+
+    .profile_title {
+        @apply w-11/12 bg-white border-[5px] border-black rounded-[20px] px-5 py-3 absolute -top-9 after:absolute after:content-[''] after:-top-1 after:right-0 after:-skew-y-6 after:bg-black after:-z-[1] after:rounded-[20px] after:w-full after:h-[60px] before:absolute before:content-[''] before:-bottom-1 before:left-0  before:-skew-y-6 before:w-full before:h-[60px] before:bg-black  before:-z-[1] before:rounded-[20px] shadow-100;
+    }
+
+    .profile_image {
+        @apply border-[3px] border-black rounded-full object-cover;
+    }
+
+    /* idea details */
+    .divider {
+        @apply bg-zinc-400 mx-auto my-10 border-dotted max-w-4xl;
+    }
+
+    .view_skeleton {
+        @apply right-3 bottom-3 fixed bg-zinc-400 rounded-lg w-24 h-10;
+    }
+
+    /* navbar */
+    .avatar {
+        @apply bg-none drop-shadow-md p-0 rounded-full focus-visible:ring-0;
+    }
+
+    .dropdown-menu {
+        @apply border-[5px] bg-white p-5 border-black rounded-2xl w-56;
+    }
+
+    .login {
+        @apply relative border-[5px] bg-white shadow-100 hover:shadow-none py-4 border-black font-medium font-work-sans text-black transition-all duration-500;
+    }
+
+    /* searchform */
+    .search-form {
+        @apply flex flex-row items-center gap-5 border-[5px] bg-white mt-8 px-5 border-black rounded-[80px] w-full max-w-3xl min-h-[80px] text-[24px];
+    }
+
+    .search-input {
+        @apply flex-1 w-full h-auto font-bold placeholder:font-semibold placeholder:text-black-100 outline-none;
+    }
+
+    .search-btn {
+        @apply flex justify-center items-center bg-black rounded-full size-[50px];
+    }
+
+    /* startupcard */
+    .startup-card {
+        @apply border-[5px] hover:border-primary bg-white hover:bg-primary-100 shadow-200 hover:shadow-300 px-5 py-6 border-black rounded-[22px] transition-all duration-500;
+    }
+
+    .startup-card_date {
+        @apply group-hover:bg-white-100 bg-primary-100 px-4 py-2 rounded-full font-medium text-[16px];
+    }
+
+    .startup-card_desc {
+        @apply my-3 line-clamp-2 font-normal text-[16px] text-black-100 break-all;
+    }
+
+    .startup-card_img {
+        @apply rounded-[10px] w-full h-[164px] object-cover;
+    }
+
+    .startup-card_btn {
+        @apply bg-black-200 px-5 py-3 rounded-full font-medium text-[16px] text-white;
+    }
+
+    .startup-card_skeleton {
+        @apply bg-zinc-400 rounded-[22px] w-full h-96;
+    }
+
+    /* startupform */
+    .startup-form {
+        @apply space-y-8 bg-white mx-auto my-10 px-6 max-w-2xl;
+    }
+
+    .startup-form_label {
+        @apply font-bold text-[18px] text-black uppercase;
+    }
+
+    .startup-form_input {
+        @apply border-[3px] mt-3 px-5 py-7 border-black rounded-full font-semibold text-[18px] text-black placeholder:text-black-300;
+    }
+
+    .startup-form_textarea {
+        @apply border-[3px] mt-3 p-5 border-black rounded-[20px] font-semibold text-[18px] text-black placeholder:text-black-300;
+    }
+
+    .startup-form_error {
+        @apply mt-2 ml-5 text-red-500;
+    }
+
+    .startup-form_editor {
+        @apply border-[3px] mt-3 border-black font-semibold text-[18px] text-black placeholder:text-black-300;
+    }
+
+    .startup-form_btn {
+        @apply border-[4px] bg-primary p-5 border-black rounded-full w-full min-h-[70px] font-bold text-[18px];
+    }
+
+    /* view */
+    .view-container {
+        @apply right-3 bottom-3 fixed flex justify-end items-center mt-5;
+    }
+
+    .view-text {
+        @apply bg-primary-100 px-4 py-2 rounded-lg font-medium text-[16px] capitalize;
+    }
+
+    .category-tag {
+        @apply bg-primary-100 px-4 py-2 rounded-full font-medium text-[16px];
+    }
+
+    .pattern {
+        background-image: linear-gradient(
+                to right,
+                transparent 49.5%,
+                rgba(251, 232, 67, 0.2) 49.5%,
+                rgba(251, 232, 67, 0.6) 50.5%,
+                transparent 50.5%
+        );
+        background-size: 5% 100%;
+        background-position: center;
+        background-repeat: repeat-x;
+    }
+
+    .tag-tri {
+        @apply before:top-2 after:right-2 after:bottom-2 before:left-2 before:absolute after:absolute before:content-[''] after:content-[''] before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+    }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.w-md-editor-toolbar {
+    padding: 10px ;
 }
