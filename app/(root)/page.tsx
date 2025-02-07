@@ -1,18 +1,15 @@
-import { StartupCard } from "@/components/StartupCard";
+import { StartupCard, StartupCardType } from "@/components/StartupCard";
 import { SearchForm } from "../../components/SearchForm";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
-export default async function Home({ searchParams }: { searchParams: Promise<{query?: string}>   }) {
+export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }> }) {
+  
   const query = (await searchParams).query;
-  const posts = [{
-    _createdAt: new Date(),
-    views: 55,
-    author: { _id: 1, name: 'Emanuel' },
-    _id:1,
-    description: 'Description',
-    image: 'https://img.lagaceta.com.ar/fotos/notas/2016/04/28/679915_20160428074018.jpg',
-    category: 'Software Unicorn',
-    title: 'Globant'
-  }]
+  const params = {search: query || null}
+
+  const {data: posts} = await sanityFetch({query: STARTUPS_QUERY, params});
+
   return (
     <>
       <section className="pink_container">
@@ -39,6 +36,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{qu
           }
         </ul>
       </section>
+
+      <SanityLive/>
     </>
   );
 }
