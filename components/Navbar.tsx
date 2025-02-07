@@ -14,7 +14,7 @@ const Navbar = async() => {
                     <Image src="/logo.png" alt="logo" width={144} height={30}/>
                 </Link>
 
-                <div className="flex items-center gap-5 text-black">
+                <div className="flex items-center gap-5 font-semibold text-black">
                     {
                         session && session?.user ? (
                             <>
@@ -27,14 +27,14 @@ const Navbar = async() => {
                                     await signOut()
                                 }}>
 
-                                    <button type="submit">
+                                    <button className="!text-primary" type="submit">
                                         Logout
                                     </button>
-                                    
                                 </form>
 
-                                <Link href={`/user/`}>
+                                <Link href={`/user/`} className="flex items-center gap-2">
                                     <span>{session?.user?.name}</span>
+                                    <Image src={session?.user?.image ?? 'avatar'} alt="avatar" width={32} height={32} className="rounded-full"/>
                                 </Link>
                             </>
                         ) : (
