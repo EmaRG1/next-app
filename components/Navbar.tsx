@@ -34,7 +34,7 @@ const Navbar = async() => {
 
                                 <Link href={`/user/`} className="flex items-center gap-2">
                                     <span>{session?.user?.name}</span>
-                                    <Image src={session?.user?.image ?? 'avatar'} alt="avatar" width={32} height={32} className="rounded-full"/>
+                                    <Image src={`${session?.user?.image}`} alt="avatar" width={32} height={32} className="rounded-full"/>
                                 </Link>
                             </>
                         ) : (

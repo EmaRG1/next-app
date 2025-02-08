@@ -15,6 +15,8 @@ import { structure } from './sanity/structure'
 
 import {markdownSchema} from 'sanity-plugin-markdown'
 
+import "easymde/dist/easymde.min.css";
+
 export default defineConfig({
   basePath: '/studio',
   projectId,
