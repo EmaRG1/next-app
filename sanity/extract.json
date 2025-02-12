@@ -887,12 +887,5 @@
         "optional": true
       }
     }
-  },
-  {
-    "name": "markdown",
-    "type": "type",
-    "value": {
-      "type": "string"
-    }
   }
 ]
