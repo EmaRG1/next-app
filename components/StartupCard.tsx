@@ -1,10 +1,11 @@
-import { formatDate } from '@/lib/utils'
+import { cn, formatDate } from '@/lib/utils'
 import { EyeIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
 import { Author, Startup } from '@/sanity/types'
+import { Skeleton } from './ui/skeleton'
 
 export type StartupCardType = Omit<Startup, 'author'> & {author? : Author}
 
@@ -18,7 +19,7 @@ export const StartupCard = ({ post }: { post: StartupCardType }) => {
         </p>
 
         <div className='flex gap-1.5'>
-          <EyeIcon className='text-primary size-6'></EyeIcon>
+          <EyeIcon className='size-6 text-primary'></EyeIcon>
           <span className='text-16-medium'>{views}</span>
         </div>
       </div>
@@ -26,15 +27,15 @@ export const StartupCard = ({ post }: { post: StartupCardType }) => {
       <div className='flex-between gap-5 mt-5'>
         <div className='flex-1'>
           <Link href={`/user/${author?._id}`}>
-            <p className='line-clamp-1 text-16-medium'>{author?.name}</p>
+            <p className='text-16-medium line-clamp-1'>{author?.name}</p>
           </Link>
           <Link href={`/startup/${_id}`}>
-            <h3 className='line-clamp-1 text-26-semibold'>{title}</h3>
+            <h3 className='text-26-semibold line-clamp-1'>{title}</h3>
           </Link>
         </div>
 
         <Link href={`/user/${author?._id}`}>
-          <Image src="https://placehold.co/48x48" alt="placeholder" width={48} height={48} className='rounded-full' />
+          <Image src={author?.image!} alt={author?.name!} width={48} height={48} className='rounded-full' />
         </Link>
       </div>
 
@@ -58,3 +59,15 @@ export const StartupCard = ({ post }: { post: StartupCardType }) => {
     </li>
   )
 }
+
+export const StartupCardSkeleton = () => (
+  <>
+    {
+      [0, 1, 2, 3, 4].map((index: number) => (
+        <li key={cn('skeleton', index)}>
+          <Skeleton className='startup-card_skeleton' />
+        </li>
+      ))
+    }
+  </>
+)

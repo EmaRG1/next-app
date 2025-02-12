@@ -23,7 +23,8 @@ export const View = async ({ id }: { id: string }) => {
         <Ping />
       </div>
         <p className='view-text'>
-          <span className='font-black'> Views: {totalViews}</span>
+          <span className='hidden sm:inline mr-1 font-black'> Views:</span>
+          <span className='font-black'>{totalViews}</span>
         </p>
     </div>
   )

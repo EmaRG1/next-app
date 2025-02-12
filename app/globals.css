@@ -52,15 +52,15 @@
     }
 
     .tag {
-        @apply relative bg-secondary px-6 py-3 rounded-sm font-bold font-work-sans uppercase tag-tri;
+        @apply relative bg-secondary px-6 py-3 rounded-sm font-work-sans font-bold uppercase tag-tri;
     }
 
     .heading {
-        @apply bg-black my-5 px-6 py-3 max-w-5xl font-extrabold font-work-sans text-[36px] text-center text-white sm:text-[54px] uppercase leading-[46px] sm:leading-[64px];
+        @apply bg-black my-5 px-6 py-3 max-w-5xl font-work-sans font-extrabold text-[36px] text-white sm:text-[54px] text-center uppercase leading-[46px] sm:leading-[64px];
     }
 
     .sub-heading {
-        @apply max-w-2xl font-medium text-[20px] text-center text-white break-words;
+        @apply max-w-2xl font-medium text-[20px] text-white text-center break-words;
     }
 
     .section_container {
@@ -85,7 +85,7 @@
     }
 
     .profile_card {
-        @apply relative z-0 flex flex-col justify-center items-center border-[5px] bg-primary shadow-100 px-6 pt-20 pb-6 border-black rounded-[30px] w-80 max-lg:w-full h-fit;
+        @apply z-0 relative flex flex-col justify-center items-center bg-primary shadow-100 px-6 pt-20 pb-6 border-[5px] border-black rounded-[30px] w-80 max-lg:w-full h-fit;
     }
 
     .profile_title {
@@ -111,20 +111,20 @@
     }
 
     .dropdown-menu {
-        @apply border-[5px] bg-white p-5 border-black rounded-2xl w-56;
+        @apply bg-white p-5 border-[5px] border-black rounded-2xl w-56;
     }
 
     .login {
-        @apply relative border-[5px] bg-white shadow-100 hover:shadow-none py-4 border-black font-medium font-work-sans text-black transition-all duration-500;
+        @apply relative bg-white shadow-100 hover:shadow-none py-4 border-[5px] border-black font-work-sans font-medium text-black transition-all duration-500;
     }
 
     /* searchform */
     .search-form {
-        @apply flex flex-row items-center gap-5 border-[5px] bg-white mt-8 px-5 border-black rounded-[80px] w-full max-w-3xl min-h-[80px] text-[24px];
+        @apply flex flex-row items-center gap-5 bg-white mt-8 px-5 border-[5px] border-black rounded-[80px] w-full max-w-3xl min-h-[80px] text-[24px];
     }
 
     .search-input {
-        @apply flex-1 w-full h-auto font-bold placeholder:font-semibold placeholder:text-black-100 outline-none;
+        @apply flex-1 outline-none w-full h-auto placeholder:font-semibold font-bold placeholder:text-black-100;
     }
 
     .search-btn {
@@ -133,7 +133,7 @@
 
     /* startupcard */
     .startup-card {
-        @apply border-[5px] hover:border-primary bg-white hover:bg-primary-100 shadow-200 hover:shadow-300 px-5 py-6 border-black rounded-[22px] transition-all duration-500;
+        @apply bg-white hover:bg-primary-100 shadow-200 hover:shadow-300 px-5 py-6 border-[5px] hover:border-primary border-black rounded-[22px] transition-all duration-500;
     }
 
     .startup-card_date {
@@ -141,7 +141,7 @@
     }
 
     .startup-card_desc {
-        @apply my-3 line-clamp-2 font-normal text-[16px] text-black-100 break-all;
+        @apply my-3 font-normal text-[16px] text-black-100 break-all line-clamp-2;
     }
 
     .startup-card_img {
@@ -166,11 +166,11 @@
     }
 
     .startup-form_input {
-        @apply border-[3px] mt-3 px-5 py-7 border-black rounded-full font-semibold text-[18px] text-black placeholder:text-black-300;
+        @apply mt-3 px-5 py-7 border-[3px] border-black rounded-full font-semibold text-[18px] text-black placeholder:text-black-300;
     }
 
     .startup-form_textarea {
-        @apply border-[3px] mt-3 p-5 border-black rounded-[20px] font-semibold text-[18px] text-black placeholder:text-black-300;
+        @apply mt-3 p-5 border-[3px] border-black rounded-[20px] font-semibold text-[18px] text-black placeholder:text-black-300;
     }
 
     .startup-form_error {
@@ -178,16 +178,16 @@
     }
 
     .startup-form_editor {
-        @apply border-[3px] mt-3 border-black font-semibold text-[18px] text-black placeholder:text-black-300;
+        @apply mt-3 border-[3px] border-black font-semibold text-[18px] text-black placeholder:text-black-300;
     }
 
     .startup-form_btn {
-        @apply border-[4px] bg-primary p-5 border-black rounded-full w-full min-h-[70px] font-bold text-[18px];
+        @apply bg-primary p-5 border-[4px] border-black rounded-full w-full min-h-[70px] font-bold text-[18px];
     }
 
     /* view */
     .view-container {
-        @apply right-3 bottom-3 fixed flex justify-end items-center mt-5;
+        @apply bottom-3 left-3 fixed flex justify-end items-center mt-5;
     }
 
     .view-text {
@@ -212,7 +212,7 @@
     }
 
     .tag-tri {
-        @apply before:top-2 after:right-2 after:bottom-2 before:left-2 before:absolute after:absolute before:content-[''] after:content-[''] before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+        @apply before:top-2 after:right-2 after:bottom-2 before:left-2 before:absolute after:absolute before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent before:content-[''] after:content-[''];
     }
 }
 
