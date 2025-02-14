@@ -1,8 +1,7 @@
 import {withSentryConfig} from '@sentry/nextjs';
 import type { NextConfig } from "next";
-import withTM from "next-transpile-modules";
 
-const nextConfig: NextConfig =withTM(["lucide-react"])({
+const nextConfig: NextConfig ={
   /* config options here */
   typescript: {
     ignoreBuildErrors: true
@@ -24,7 +23,7 @@ const nextConfig: NextConfig =withTM(["lucide-react"])({
     buildActivity: true,
     buildActivityPosition:'bottom-right'
   }
-});
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
