@@ -1,6 +1,5 @@
 import { cn, formatDate } from '@/lib/utils'
 import { EyeIcon } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
@@ -35,7 +34,7 @@ export const StartupCard = ({ post }: { post: StartupCardType }) => {
         </div>
 
         <Link href={`/user/${author?._id}`}>
-          <Image src={author?.image!} alt={author?.name!} width={48} height={48} className='rounded-full' />
+          <img loading='lazy' fetchPriority='low' src={author?.image!} alt={author?.name!} width={48} height={48} className='rounded-full' />
         </Link>
       </div>
 
