@@ -27,7 +27,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
 
         <ul className="card_grid mt-7">
           {
-            posts.length > 0 ? posts.map((post: StartupCardType, index: number) => (
+            posts.length > 0 ? posts.map((post: StartupCardType) => (
               <StartupCard key={post?._id} post={post} />
             ))
               : (

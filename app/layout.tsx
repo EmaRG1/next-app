@@ -50,7 +50,7 @@ const workSans = localFont({
   variable: '--font-work-sans',
 })
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "FirstByte",
   description: "Are you looking for a chance to show what you're capable of?",
 };

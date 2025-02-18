@@ -13,7 +13,7 @@ import { StartupCard, StartupCardType } from '@/components/StartupCard';
 
 const md = markdownit();
 
-
+export const experimental_ppr = true;
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   
@@ -36,7 +36,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
       </section>
 
       <section className='section_container'>
-        <img src={post.image} alt="placeholder" className='shadow-sm rounded-xl w-full h-auto' />
+        <img src={post.image} loading='lazy' alt="placeholder" className='shadow-sm rounded-xl w-full h-auto' />
         <div className='space-y-5 mx-auto mt-10 max-w-4xl'>
           <div className='flex-between gap-5'>
             <Link href={`/user/${post.author._id}`} className='flex items-center gap-2 mb-3'>
