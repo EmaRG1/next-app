@@ -52,7 +52,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           <h3 className='text-30-bold'>Pitch Details</h3>
           {paresedContent ? (
-            <article className='max-w-4xl font-work-sans break-all prose' dangerouslySetInnerHTML={{__html: paresedContent}}/>
+            <article className='max-w-4xl font-work-sans break-words prose' dangerouslySetInnerHTML={{__html: paresedContent}}/>
           ) : (
               <p className='no-results'>No details provided</p>
           )}
